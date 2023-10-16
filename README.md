@@ -4,7 +4,7 @@
 
 -------
 
-# Реализованный функционал формы "Интернет магазин" 
+# Реализованный функционал формы "Подобор сборки ПК" 
 
 -----
 
@@ -27,7 +27,7 @@
 * Установите Visual Studio или альтернативные программы
 * Склонируйте репозиторий с файлами
 
-        $ https://github.com/Anygilator/7kin-s-prooject.git
+        $ https://github.com/Anygilator/Project-Practick
         $ cd "7kin's project"
 
 -----
