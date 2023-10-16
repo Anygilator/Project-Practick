@@ -28,6 +28,6 @@
 * Склонируйте репозиторий с файлами
 
         $ https://github.com/Anygilator/Project-Practick
-        $ cd "7kin's project"
+        $ cd "PP7kin"
 
 -----
