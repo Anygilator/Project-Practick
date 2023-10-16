@@ -1,0 +1,29 @@
+﻿<Window x:Class="_7kinPC.NewPC"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_7kinPC"
+        mc:Ignorable="d"
+        Title="NewPC" Height="450" Width="800">
+    <Grid>
+        <Label Content="Название сборки" HorizontalAlignment="Left" Margin="258,131,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="nazv" HorizontalAlignment="Left" Margin="368,135,0,0" TextWrapping="Wrap" Text="&#xD;&#xA;" VerticalAlignment="Top" Width="120" Height="22"/>
+        <Label Content="Видеокарта" HorizontalAlignment="Left" Margin="289,160,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="GPU" HorizontalAlignment="Left" Margin="368,162,0,0" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="120" Height="22"/>
+        <Label Content="Кол-во памяти" HorizontalAlignment="Left" Margin="272,187,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="RAM" HorizontalAlignment="Left" Margin="368,189,0,0" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="120" Height="22"/>
+        <Label Content="Процессор" HorizontalAlignment="Left" Margin="292,214,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="CPU" HorizontalAlignment="Left" Margin="368,216,0,0" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="120" Height="22"/>
+        <Label Content="Цена" HorizontalAlignment="Left" Margin="325,239,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="Price" HorizontalAlignment="Left" Margin="368,243,0,0" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="120" Height="22"/>
+        <Label Content="Кол-во" HorizontalAlignment="Left" Margin="315,268,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="Count" HorizontalAlignment="Left" Margin="368,270,0,0" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="120" Height="22"/>
+        <Button Content="Добавить ПК" HorizontalAlignment="Left" Margin="368,297,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.122,-0.776" Width="120" Click="Button_Click"/>
+        <Label Content="Добавление новой сборки" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top"/>
+        <Button Margin="368,381,306,19" Content="Вернуться к началу" Click="GetToMainWindow"></Button>
+        <Label Content="Id" HorizontalAlignment="Left" Margin="343,106,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Id" HorizontalAlignment="Left" Margin="368,108,0,0" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="120" Height="22"/>
+
+    </Grid>
+</Window>
