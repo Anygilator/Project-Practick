@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.IO;
 
 namespace _7kinPC
 {
@@ -27,11 +28,15 @@ namespace _7kinPC
 
             InitializeComponent();
 
+            string directoty = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            string path = System.IO.Path.GetDirectoryName(directoty);
+            string currentPath = $"{path}\\PcBd.mdf";
+
 
             if (MainWindow.boolme == true)
             {
-                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\7kin-s-prooject-develop\WpfApp1\WpfApp1\PcBd.mdf;Integrated Security=True";
-                string sqlExpression = "SELECT Top 1 * FROM PC order by price desc";
+                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + currentPath + ";Integrated Security=True";
+                string sqlExpression = "SELECT Top 1 * FROM PC order by price";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -52,7 +57,7 @@ namespace _7kinPC
 
                             if (price < MainWindow.buddjet || price == MainWindow.buddjet)
                             {
-                                list_PC.Text += Convert.ToString($"{id} {nazv} {videocarta} {kolvoOpMem} {proc} {price} {kolvoSklad}\n");
+                                list_PC.Text = Convert.ToString($"{id} {nazv} {videocarta} {kolvoOpMem} {proc} {price} {kolvoSklad}\n");
                             }
                         }
                     }
@@ -61,7 +66,7 @@ namespace _7kinPC
             }
             else
             {
-                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\7kin-s-prooject-develop\WpfApp1\WpfApp1\PcBd.mdf;Integrated Security=True";
+                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" +currentPath + ";Integrated Security=True";
                 string sqlExpression = "SELECT * FROM PC";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
