@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,9 +27,13 @@ namespace _7kinPC
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            string directoty = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            string path = System.IO.Path.GetDirectoryName(directoty);
+            string currentPath = $"{path}\\PcBd.mdf";
+
             if (Id.Text.Length != 0 && nazv.Text.Length != 0 && GPU.Text.Length != 0 && RAM.Text.Length != 0 && CPU.Text.Length != 0 && Price.Text.Length != 0 && Count.Text.Length != 0)
             {
-                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\7kin-s-prooject-develop\WpfApp1\WpfApp1\PcBd.mdf;Integrated Security=True";
+                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + currentPath + ";Integrated Security=True";
                 string sqlExpression = $"insert into PC values ('{Convert.ToInt32(Id.Text)}','{nazv.Text}','{GPU.Text}','{Convert.ToInt32(RAM.Text)}','{CPU.Text}','{Convert.ToDouble(Price.Text)}','{Convert.ToInt32(Count.Text)}')";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
